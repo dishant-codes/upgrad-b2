@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+
+        body{
+            height: 90vh;
+            display: grid;
+            place-items: center;
+        }
+
+
+        .btn{
+            font-size: 50px;
+            background-color: #4FCE5D;
+            display: inline-block;
+            color: white;
+            border-radius: 50%;
+            padding-top: 5px;
+            position: relative;
+        }
+
+
+        .pulse{
+            background-color: #4FCE5D;
+            width: 55px;
+            height: 55px;
+            position: absolute;
+            border-radius: 50%;
+            top: 5px;
+            left: 5px;
+            z-index: -1;
+            animation: pulse 2s ease infinite;
+        }
+
+
+
+        @keyframes pulse{
+            from{
+                transform: scale(0);
+                opacity: 1;
+            }
+
+            to{
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="btn">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        <div class="pulse"></div>
+        
+    </div>
+    
+</body>
+</html>

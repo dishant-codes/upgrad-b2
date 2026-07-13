@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-image: url(./background.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        img{
+            width: 300px;
+            margin-top: 30%;
+            /* animation-name: drive; */
+            /* animation-duration: 4s; */
+            /* animation-timing-function: ease-in; */
+            /* animation-fill-mode: forwards; */
+            /* animation-iteration-count: infinite; */
+            animation: drive 4s ease-in infinite;
+            /*  animation-name duration easing itreration-count  */
+        }
+
+
+        @keyframes drive{
+            from{
+                transform: translateX(-100%);
+            }
+
+            to{
+                transform: translateX(300%);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <img src="./car.webp" alt="">
+
+    
+</body>
+</html>

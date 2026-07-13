@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo Brutalism Grid Layout</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f8f4e8;
+    padding:20px;
+}
+
+/* GRID CONTAINER */
+
+.container{
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr 300px;
+
+    grid-template-areas:
+        "header header header header"
+        "hero hero hero sidebar"
+        "card1 card2 card3 sidebar"
+        "card4 card4 card4 sidebar"
+        "footer footer footer footer";
+
+    gap:20px;
+}
+
+/* COMMON NEO BRUTALISM STYLE */
+
+.header,
+.hero,
+.card,
+.sidebar,
+.footer{
+    border:4px solid #000;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:8px 8px 0 #000;
+}
+
+/* HEADER */
+
+.header{
+    grid-area:header;
+    background:#ff6b6b;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* HERO */
+
+.hero{
+    grid-area:hero;
+    background:#ffe66d;
+    min-height:350px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:20px;
+}
+
+.hero h2{
+    font-size:3rem;
+}
+
+.hero p{
+    font-size:1.1rem;
+    max-width:600px;
+}
+
+/* CARDS */
+
+.card{
+    min-height:180px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.card1{
+    grid-area:card1;
+    background:#6bcBef;
+}
+
+.card2{
+    grid-area:card2;
+    background:#95f9c3;
+}
+
+.card3{
+    grid-area:card3;
+    background:#ffb4a2;
+}
+
+.card4{
+    grid-area:card4;
+    background:#cdb4db;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    grid-area:sidebar;
+    background:#ffffff;
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+/* FOOTER */
+
+.footer{
+    grid-area:footer;
+    background:#000;
+    color:white;
+    text-align:center;
+}
+
+/* BUTTONS */
+
+button{
+    background:white;
+    border:3px solid black;
+    padding:12px 20px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:4px 4px 0 #000;
+}
+
+button:hover{
+    transform:translate(-2px,-2px);
+    box-shadow:6px 6px 0 #000;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .container{
+
+        grid-template-columns:1fr;
+
+        grid-template-areas:
+            "header"
+            "hero"
+            "card1"
+            "card2"
+            "card3"
+            "card4"
+            "sidebar"
+            "footer";
+    }
+
+    .hero h2{
+        font-size:2rem;
+    }
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header class="header">
+        <h1>TECH SAVVY</h1>
+        <button>Join Now</button>
+    </header>
+
+    <section class="hero">
+        <h2>Learn Web Development with AI</h2>
+        <p>
+            Master HTML, CSS, JavaScript, React, Node.js and AI-powered development.
+        </p>
+        <button>Start Learning</button>
+    </section>
+
+    <section class="card card1">
+        <h3>HTML & CSS</h3>
+        <p>Build beautiful websites.</p>
+    </section>
+
+    <section class="card card2">
+        <h3>JavaScript</h3>
+        <p>Create interactive applications.</p>
+    </section>
+
+    <section class="card card3">
+        <h3>React</h3>
+        <p>Develop modern frontends.</p>
+    </section>
+
+    <section class="card card4">
+        <h3>Node.js</h3>
+        <p>Build scalable backends.</p>
+    </section>
+
+    <aside class="sidebar">
+        <h3>Upcoming Bootcamp</h3>
+        <p>7-Day Web Designing with AI</p>
+        <button>Register</button>
+    </aside>
+
+    <footer class="footer">
+        <p>© 2026 Tech Savvy School</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
