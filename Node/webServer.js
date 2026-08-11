@@ -1,22 +1,33 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const formidable = require('formidable');
 
 
 const server = http.createServer((req, res)=>{
-    if(req.method === 'GET' && req.url === '/'){
-        fs.readFile(path.join(__dirname,'index.html'),(err, data)=>{
-            if(err) throw err;
-            res.writeHead(200, {'Content-Type': 'text/html'});
-            res.end(data);
-        });
-    }
-    else if(req.method === 'GET' && req.url === '/home'){
-        fs.readFile(path.join(__dirname,'home.html'),(err, data)=>{
-            if(err) throw err;
-            res.writeHead(200, {'Content-Type': 'text/html'});
-            res.end(data);
-        });
+    if(req.method === 'POST' && req.url === '/upload') {
+            const form = new formidable.IncomingForm();
+            form.parse(req, (err, fields, files) => {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Internal Server Error');
+                return;
+            }
+            res.writeHead(200, { 'Content-Type': 'text/plain' });
+            res.end('File uploaded successfully!');
+
+    }); }
+    else if(req.method === 'GET' && req.url === '/'){
+        const filePath = path.join(__dirname, 'home.html');
+        fs.readFile(filePath, (err, data) => {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Internal Server Error');
+            } else {
+                res.writeHead(200, { 'Content-Type': 'text/html' });
+                res.end(data); 
+            }
+        })
     }
 })
 
